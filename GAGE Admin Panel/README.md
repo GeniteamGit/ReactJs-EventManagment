@@ -1,8 +1,5 @@
 ## Admin Dashboard React.js | GAGE Admin Panel
 
-### Installation
-
-
 ### Introduction
 
 <h3 align="center">Gage Admin Panel!</h3>
@@ -147,3 +144,18 @@ GAGE Admin/
 ├─ .gitignore 
 ├─ package.json 
 ````
+### ScreenShots
+#### Login
+<img src="assets/1.png">
+
+#### Event Select
+<img src="assets/2.png">
+
+#### Avatar Selection
+<img src="assets/3.png">
+
+#### Super Powers
+<img src="assets/4.png">
+
+#### Questions
+<img src="assets/5.png">

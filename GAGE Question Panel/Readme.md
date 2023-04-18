@@ -82,3 +82,25 @@ Most of the code lives in the `src` folder and looks like this:
 ├── .gitignore 
 └── package.json 
 ````
+### ScreenShots
+
+#### Start
+<img src="src/assets/1.png">
+
+#### Push Question
+<img src="src/assets/2.png">
+
+#### Chart Reports
+<img src="src/assets/3.png" height="1000">
+
+#### Question Reports
+<img src="src/assets/4.png" height="1000">
+
+#### Avatar Reports
+<img src="src/assets/5.png">
+
+#### Question Results
+<img src="src/assets/6.png">
+
+#### Voting Reports
+<img src="src/assets/7.png">
