@@ -1,0 +1,97 @@
+.start_btn,
+.info_box,
+.quiz_box,
+.result_box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+.start_btn button {
+  background-color: #358CD0;
+  color: white;
+  border: none;
+  width: 200px;
+  height: 60px;
+  font-weight: 500;
+  font-size: 30px;
+  border-radius: 4px;
+  box-shadow: 0px 5px #3378AC;
+}
+
+/* /// waitig screen */
+.start_btn_waiting button {
+  background-color: #358CD0;
+  color: white;
+  border: none;
+  width: 200px;
+  height: 60px;
+  font-weight: 500;
+  font-size: 30px;
+  border-radius: 4px;
+  box-shadow: 0px 5px #3378AC;
+}
+
+.start_btn_waiting {
+  display: flex;
+  justify-content: end;
+  margin-top: 20px;
+
+}
+
+.img_set {
+  /* position: absolute;
+  top: 37%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+  width: 400px;
+  height: auto;
+}
+
+.img_set1 {
+  width: 300px;
+  height: auto;
+  cursor: pointer;
+  /* position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+
+
+}
+.img_set2{
+  width: 400px;
+  height: auto;
+  cursor: pointer;
+
+}
+
+.pos-report {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  margin-left: 20px;
+}
+
+.pos-card {
+  position: absolute;
+  top: 10px;
+  left: 100px;
+  margin-left: 20px;
+}
+
+.pos-questions{
+  position: absolute;
+  top: 10px;
+  left: 230px;
+  margin-left: 20px;
+}
+

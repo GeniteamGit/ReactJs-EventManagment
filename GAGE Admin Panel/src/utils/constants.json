@@ -1,0 +1,51 @@
+{
+  "signUpScreens": [
+    {
+      "title": "Name",
+      "enabled": true,
+      "type": "text",
+      "sequence": 1
+    },
+    {
+      "title": "Company",
+      "enabled": true,
+      "type": "text",
+      "sequence": 2
+    },
+    {
+      "title": "Email",
+      "enabled": true,
+      "type": "email",
+      "sequence": 3
+    },
+    {
+      "title": "Department",
+      "enabled": true,
+      "type": "text",
+      "sequence": 4
+    },
+    {
+      "title": "Industry",
+      "enabled": true,
+      "type": "dropDown",
+      "sequence": 5,
+      "options": [
+        "Finance",
+        "Travel & Hospitality",
+        "Retail & E-commerce",
+        "Technology",
+        "Media & Entertainment",
+        "Manufacturing, Transportation & Logistics",
+        "Energy, Oil and Gas",
+        "Communication Services",
+        "Government & Utilities & Social Institutions",
+        "Professional & Educational Services",
+        "Human Resources and Recruitment",
+        "Healthcare & Fitness",
+        "Marketing & Advertising Services",
+        "Telecommunications",
+        "Other"
+      ]
+    }
+  ]
+}
