@@ -2,6 +2,8 @@
 
 This is an event management app created using React.js. It allows users to create, edit, and delete events. This app has
 two sides - an admin panel and a question panel.
+<br><br>The product is owned by Activ8 Games & developed by Geniteam as sole development partner. This product was used in
+Local & international conferences online at various levels.
 
 ### Admin Panel
 
@@ -49,7 +51,6 @@ This app was created using the following technologies:
 <img src="GAGE-Admin-Panel/assets/2.png">
 <img src="GAGE-Admin-Panel/assets/3.png">
 <img src="GAGE-Admin-Panel/assets/5.png">
-<img src="GAGE-Question-Panel/src/assets/6.png">
+<img src="GAGE-Question-Panel/src/assets/2.png">
 <img src="GAGE-Question-Panel/src/assets/4.png">
 <img src="GAGE-Question-Panel/src/assets/3.png">
-<img src="GAGE-Question-Panel/src/assets/2.png">
