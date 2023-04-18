@@ -8,7 +8,7 @@ Question panel is used to start event and push questions, check reports and stat
 <br>The product is owned by Activ8 Games & developed by Geniteam as sole development partner. This product was used in
 Local & international conferences online at various levels.
 
-### Features
+### Features list
 
 <ol>
 <li>Start event</li>
