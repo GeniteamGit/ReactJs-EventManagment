@@ -22,7 +22,7 @@ const AnswersAll = () => {
     const [loading, setLoading] = useState("");
     const {eid} = useParams();
     useEffect(() => {
-        console.log("useEffect");
+       
         const fetch = async () => {
             try {
                 setLoading("pending");
@@ -42,19 +42,19 @@ const AnswersAll = () => {
         const docRef = doc(db, "answers", eid);
         const docSnap = await getDoc(docRef);
         if (docSnap.exists()) {
-            //   console.log("Document data:", docSnap.data());
+            //  
             let obj = docSnap.data();
-            //   console.log(obj);
-            //   console.log(eid);
-            //   console.log(id);
-            // console.log(obj["asnwersData"][eid]);
+            //  
+            //  
+            //  
+            //
             //   for (const objKey in obj["asnwersData"][eid]) {
-            //     // console.log(obj["asnwersData"][eid][objKey]);
+            //     //
             //     const _newObject = obj["asnwersData"][eid][objKey];
-            //     console.log(_newObject);
+            //    
             //     // const _key = obj[objKey];
-            //     // console.log(_key);
-            //     // console.log("Keys only",Object.keys(inventories));
+            //     //
+            //     //
             //     // if (Object.keys(inventories).includes(obj[objKey])) {
             //     //   inventories[_key] = inventories[_key] + 1;
             //     // } else {
@@ -64,7 +64,7 @@ const AnswersAll = () => {
             setAnswers(obj["asnwersData"]);
         } else {
             // doc.data() will be undefined in this case
-            console.log("No such document!");
+           
         }
     };
 
@@ -82,7 +82,7 @@ const AnswersAll = () => {
             obj = {...obj, id: doc.id};
             dataarr.push(obj);
         });
-        console.log(dataarr);
+       
         return dataarr;
     }
 
@@ -90,12 +90,12 @@ const AnswersAll = () => {
     //     const question1 = doc(db, "questions", id);
     //     const questionSnap = await getDoc(question1);
     //     if (questionSnap.exists()) {
-    //       console.log("Document data:", questionSnap.data());
+    //      
     //       let obj = questionSnap.data();
-    //       console.log(obj);
+    //      
     //       setQuestion(obj);
     //     } else {
-    //       console.log("No such document!");
+    //      
     //     }
     //   };
 

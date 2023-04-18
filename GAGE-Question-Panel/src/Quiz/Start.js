@@ -38,14 +38,14 @@ export default function Start({questions, eid, index, theme}) {
         fetch();
     }, []);
     useEffect(() => {
-        console.log(questionData);
+       
     }, [questionData]);
 
     const getQuestion = async (index) => {
         var url_string = window.location.href;
         var url = new URL(url_string);
         var c = url.searchParams.get("gamecode");
-        console.log(c);
+       
         const questionsRef = collection(db, "questions");
         const q = query(
             questionsRef,
@@ -60,8 +60,8 @@ export default function Start({questions, eid, index, theme}) {
             obj = {...obj, id: doc.id};
             dataarr.push(obj);
         });
-        console.log(questionData);
-        console.log(dataarr);
+       
+       
         return dataarr;
     };
 
@@ -70,7 +70,7 @@ export default function Start({questions, eid, index, theme}) {
         const Ref = doc(db, "increment", eid);
         const washingtonRef = doc(db, "eventObserver", eid);
         if (typeof questionData[0] === "undefined") {
-            console.log("else");
+           
             await updateDoc(Ref, {
                 i: 1,
             });
@@ -87,8 +87,8 @@ export default function Start({questions, eid, index, theme}) {
 
         navigate(`/quiz/?gamecode=${eid}`);
         if (typeof questionData[0].id !== "undefined") {
-            console.log("in if()");
-            // console.log(ic, questions.length);
+           
+            //
             await updateDoc(Ref, {
                 i: increment(1),
             });
@@ -100,15 +100,15 @@ export default function Start({questions, eid, index, theme}) {
         var url = new URL(url_string);
         var c = url.searchParams.get("gamecode");
         const docRef = doc(db, "increment", c);
-        console.log(c);
+       
         const docSnap = await getDoc(docRef);
         if (docSnap.exists()) {
-            console.log("Sequence:", docSnap.data().i);
+           
             setIc(docSnap.data().i);
             // setCountTimer(questions[docSnap.data().i]["timer"])
             return docSnap.data().i;
         } else {
-            console.log("No such document!");
+           
         }
     };
 

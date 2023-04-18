@@ -14,21 +14,21 @@ const VotingReport = ({theme}) => {
 
     useEffect(() => {
         loadIdeasDocument().then(result => {
-            console.log(result);
+           
             setIdeas(result);
         });
         loadUsers().then(result => {
-            console.log(result);
+           
             setUsersCount(result.length);
             setLoading(false);
         });
         loadDetails().then(result => {
-            console.log(result);
+           
             setTile(result.titleName);
         })
     }, []);
     useEffect(() => {
-        console.log(ideas);
+       
     }, [ideas]);
 
     const loadUsers = async () => {
@@ -46,7 +46,7 @@ const VotingReport = ({theme}) => {
         }
     }
     const loadDetails = async () => {
-        console.log(eid);
+       
         const docRef = doc(db, "details", eid);
         const docSnap = await getDoc(docRef);
         if (docSnap.exists()) {

@@ -35,7 +35,7 @@ const ReportsCard = ({theme}) => {
             setCompetencies(result);
             loadFilters().then(filters => {
                 const enabledScreens = filters.filter(screen => screen.enabled && screen.type === "dropDown");
-                console.log(enabledScreens);
+               
                 setFilters(enabledScreens);
                 loadData().then(_data => {
                     setJsonLoad(true);
@@ -46,7 +46,7 @@ const ReportsCard = ({theme}) => {
     }, []);
     useEffect(() => {
         setUsers(userData);
-        console.log(filters);
+       
         let tempArray = [];
         filters.forEach((screen) => {
             if (screen.value === "All") {
@@ -55,7 +55,7 @@ const ReportsCard = ({theme}) => {
                 tempArray.push({[screen.title]: screen.value});
             }
         });
-        console.log(tempArray, "Temp Array");
+       
         if (tempArray.length > 0) {
             const filteredUsers = userData.filter(user => {
                 // Check if the user matches all of the filter conditions
@@ -66,7 +66,7 @@ const ReportsCard = ({theme}) => {
                 });
             });
 
-            console.log(filteredUsers, "filteredUsers");
+           
             setUsers(filteredUsers);
         }
     }, [filters]);
@@ -81,8 +81,8 @@ const ReportsCard = ({theme}) => {
     useEffect(() => {
         if (armor || sheild || weapons || industry || modal || inventary) {
             let data = userData;
-            console.log("test", data);
-            console.log("zubair");
+           
+           
             if (armor) {
                 if (armor === "All") {
                     setArmor("");
@@ -99,7 +99,7 @@ const ReportsCard = ({theme}) => {
                     });
                 }
 
-                // console.log(serachName, data);
+                //
             }
             if (industry) {
                 if (industry === "All") {
@@ -166,7 +166,7 @@ const ReportsCard = ({theme}) => {
                                 item.attributes.inventory[2] == inventary ||
                                 item.attributes.inventory[3] == inventary
                             ) {
-                                console.log(item.attributes.inventory[0], inventary);
+                               
 
                                 return item;
                             }
@@ -186,12 +186,12 @@ const ReportsCard = ({theme}) => {
         return docSnap.data().screens;
     }
     const loadData = async () => {
-        console.log("fetch called");
+       
         const data = await AvatarData();
-        console.log("data: ", data);
+       
         const data2 = await loadUsers();
-        console.log("setting state");
-        console.log("data2: ", data2);
+       
+       
         const themeData = await themeAvatar1();
         setAvatarData(data);
         setThemeAvatar(themeData);
@@ -201,24 +201,24 @@ const ReportsCard = ({theme}) => {
     const loadComeptencies = async () => {
         const docRef = doc(db, "themeCharacter", "config");
         const docSnap = await getDoc(docRef);
-        console.log(docSnap.data());
+       
         let competenciesObject = docSnap.data().competencies;
         let competenciesArray = [];
         for (const _competency in competenciesObject) {
-            console.log(_competency);
+           
             competenciesArray.push(competenciesObject[_competency]);
         }
         return competenciesArray
     }
     const AvatarData = async () => {
-        console.log("AvatarData called");
+       
         const docRef = doc(db, "details", id);
         const docSnap = await getDoc(docRef);
         if (docSnap.exists()) {
-            console.log("docSnap exists");
+           
             return docSnap.data();
         } else {
-            console.log("No such document!");
+           
         }
     }
     const themeAvatar1 = async () => {
@@ -226,26 +226,26 @@ const ReportsCard = ({theme}) => {
             const docRef = doc(db, "themeCharacter", "1");
             const docSnap = await getDoc(docRef);
             if (docSnap.exists()) {
-                console.log("docSnap exists");
-                console.log(docSnap.data(), "themeData");
+               
+               
                 return docSnap.data();
             } else {
-                console.log("No such document!");
+               
             }
         } else if (theme === "2") {
             const docRef = doc(db, "themeCharacter", "2");
             const docSnap = await getDoc(docRef);
             if (docSnap.exists()) {
-                console.log("docSnap exists");
-                console.log(docSnap.data(), "themeData");
+               
+               
                 return docSnap.data();
             } else {
-                console.log("No such document!");
+               
             }
         }
     }
     const data121 = () => {
-        console.log(competencies);
+       
         const theme1 = themeAvatar["avatarScreen"];
         const theme2 = themeAvatar["armorScreen"];
         const theme3 = themeAvatar["shieldScreen"];
@@ -260,35 +260,35 @@ const ReportsCard = ({theme}) => {
 
         if (avatarData.hasOwnProperty("avatarScreen")) {
             const data1 = avatarArray.map((e, i) => {
-                console.log(e);
+               
                 return {...e, img: theme1[i]};
             });
             setAvatar(data1);
         }
         if (avatarData.hasOwnProperty("armorScreen")) {
             const data2 = armorArray.map((e, i) => {
-                console.log(e);
+               
                 return {...e, img: theme2[i]};
             });
             setArmors(data2);
         }
         if (avatarData.hasOwnProperty("shieldScreen")) {
             const data3 = shieldArray.map((e, i) => {
-                console.log(e);
+               
                 return {...e, img: theme3[i]};
             });
             setSheild(data3);
         }
         if (avatarData.hasOwnProperty("weaponScreen")) {
             const data4 = weaponArray.map((e, i) => {
-                console.log(e);
+               
                 return {...e, img: theme4[i]};
             });
             setWeapon(data4);
         }
         if (avatarData.hasOwnProperty("competencyScreen")) {
             const data5 = competencyArray.map((e, i) => {
-                console.log(e);
+               
                 if (e.imageUrl !== undefined)
                     return {...e, img: e.imageUrl};
                 else
@@ -302,13 +302,13 @@ const ReportsCard = ({theme}) => {
         const q = query(usersRef, where("eventID", "==", id));
         const usersData = await getDocs(q);
         const w = usersData.docs.map((doc) => ({...doc.data()}));
-        console.log("w: ", w);
-        console.log(w);
-        console.log("setting users");
+       
+       
+       
         return w;
     };
     const tempFunc = () => {
-        console.log(users);
+       
         const _userSelections = {
             avatars: {},
             shields: {},
@@ -517,7 +517,7 @@ const ReportsCard = ({theme}) => {
                                                                 <InputGroup className="input-group-alternative">
                                                                     <select
                                                                         onChange={(e) => {
-                                                                            console.log(e.target.value);
+                                                                           
                                                                             let tempArray = filters;
                                                                             tempArray[index].value = e.target.value;
                                                                             setFilters([...tempArray]);

@@ -77,12 +77,12 @@ function App() {
         let url_string = window.location.href;
         let url = new URL(url_string);
         const code = url.searchParams.get("gamecode");
-        console.log(code);
+       
         if (code)
             return code
         else {
             await getEventId();
-            console.log("Enter ID");
+           
         }
     };
 
@@ -90,7 +90,7 @@ function App() {
         const docRef = doc(db, "event", _id);
         const docSnap = await getDoc(docRef);
         if (docSnap.exists()) {
-            console.log(docSnap.data());
+           
             setEventTheme(docSnap.data().themeSelected);
             setLoader(true)
         } else {
@@ -101,15 +101,15 @@ function App() {
                 backdrop: false,
                 // footer: '<a href="">Why do I have this issue?</a>'
             }).then(result => {
-                console.log(result);
+               
                 getEventId();
             });
-            console.log("No such document!");
+           
         }
     };
 
     useEffect(() => {
-        console.log(eventTheme);
+       
     }, [eventTheme]);
 
     return (

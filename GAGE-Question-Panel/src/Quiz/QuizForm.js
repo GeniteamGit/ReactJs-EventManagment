@@ -44,14 +44,14 @@ export default function QuizForm({theme}) {
         var c = url.searchParams.get("gamecode");
         setId(c);
         const docRef = doc(db, "questions", quesId);
-        console.log(c);
+       
         const docSnap = await getDoc(docRef);
         if (docSnap.exists()) {
             setQuestion(docSnap.data());
             setCountTimer(docSnap.data().timer);
             return docSnap.data();
         } else {
-            console.log("No such document!");
+           
         }
     };
 
@@ -60,14 +60,14 @@ export default function QuizForm({theme}) {
         var url = new URL(url_string);
         var c = url.searchParams.get("gamecode");
         const docRef = doc(db, "eventObserver", c);
-        console.log(c);
+       
         const docSnap = await getDoc(docRef);
         if (docSnap.exists()) {
-            console.log("Document data:", docSnap.data().currentQuestion);
+           
             setQuestionId(docSnap.data().currentQuestion);
             return docSnap.data().currentQuestion;
         } else {
-            console.log("No such document!");
+           
         }
     };
 

@@ -41,15 +41,15 @@ const Reports = ({questions, theme}) => {
         const docRef = doc(db, "answers", eid);
         const docSnap = await getDoc(docRef);
         if (docSnap.exists()) {
-            console.log("Document data:", docSnap.data());
+           
             let obj = docSnap.data();
-            console.log(obj);
-            console.log(eid);
-            console.log(id);
-            console.log(obj["asnwersData"][id]);
+           
+           
+           
+           
             setAnswers(obj["asnwersData"][id]);
         } else {
-            console.log("No such document!");
+           
         }
     };
 
@@ -57,16 +57,16 @@ const Reports = ({questions, theme}) => {
         const question1 = doc(db, "questions", id);
         const questionSnap = await getDoc(question1);
         if (questionSnap.exists()) {
-            console.log("Document data:", questionSnap.data());
+           
             let obj = questionSnap.data();
-            console.log(obj);
+           
             setQuestion(obj);
         } else {
-            console.log("No such document!");
+           
         }
     };
     useEffect(() => {
-        console.log(answers);
+       
     }, []);
     const data = {
         labels: typeof question.options !== "undefined" && [

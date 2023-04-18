@@ -256,7 +256,7 @@ const ReportCharts = ({theme}) => {
     }, [users]);
     useEffect(() => {
         setUsers(userData);
-        console.log(filters);
+       
         let tempArray = [];
         filters.forEach((screen) => {
             if (screen.value === "All") {
@@ -265,7 +265,7 @@ const ReportCharts = ({theme}) => {
                 tempArray.push({[screen.title]: screen.value});
             }
         });
-        console.log(tempArray, "Temp Array");
+       
         if (tempArray.length > 0) {
             const filteredUsers = userData.filter(user => {
                 // Check if the user matches all of the filter conditions
@@ -276,14 +276,14 @@ const ReportCharts = ({theme}) => {
                 });
             });
 
-            console.log(filteredUsers, "filteredUsers");
+           
             setUsers(filteredUsers);
         }
     }, [filters]);
     useEffect(() => {
         if (armor || sheild || weapons || industry || modal || inventary) {
             let data = userData;
-            console.log("test", data);
+           
             if (armor) {
                 if (armor === "All") {
                     setArmor("");
@@ -300,14 +300,14 @@ const ReportCharts = ({theme}) => {
                     });
                 }
 
-                // console.log(serachName, data);
+                //
             }
             if (industry) {
                 if (industry === "All") {
                     setIndustry("");
                 } else {
                     data = data.filter((item) => {
-                        console.log(item);
+                       
                         if (
                             item.industry
                                 .toString()
@@ -363,7 +363,7 @@ const ReportCharts = ({theme}) => {
                     setInventary("");
                 } else {
                     data = data.filter((item) => {
-                        console.log(item);
+                       
                         if (
                             item.attributes.inventory[0].includes(inventary) ||
                             item.attributes.inventory[1].includes(inventary) ||
@@ -395,7 +395,7 @@ const ReportCharts = ({theme}) => {
             return docSnap.data();
             // setAvatarData(docSnap.data());
         } else {
-            console.log("No such document!");
+           
         }
     }
     const loadUsers = async () => {
@@ -403,12 +403,12 @@ const ReportCharts = ({theme}) => {
         const q = query(usersRef, where("eventID", "==", id));
         const usersData = await getDocs(q);
         const w = usersData.docs.map((doc) => ({...doc.data()}));
-        console.log(w);
-        console.log("setting users");
+       
+       
         return w;
     };
     const tempFunc = () => {
-        console.log(users);
+       
         const _userSelections = {
             avatars: {},
             shields: {},
@@ -449,7 +449,7 @@ const ReportCharts = ({theme}) => {
             }
         });
 
-        console.log(_userSelections);
+       
         setUserSelections(_userSelections);
     };
 
@@ -612,7 +612,7 @@ const ReportCharts = ({theme}) => {
                                                             <InputGroup className="input-group-alternative">
                                                                 <select
                                                                     onChange={(e) => {
-                                                                        console.log(e.target.value);
+                                                                       
                                                                         let tempArray = filters;
                                                                         tempArray[index].value = e.target.value;
                                                                         setFilters([...tempArray]);
